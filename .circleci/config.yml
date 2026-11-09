@@ -1,0 +1,1403 @@
+version: 2.1
+
+jobs:
+  addr_prod:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Focus the settings gear and type
+          command: |
+            mkdir -p /tmp/alt2
+            set +o pipefail 2>/dev/null; i=0; until [ ${i} -ge 3000 ]; do echo "u-${i}"; ((i++)); done > /tmp/alt2/WAVEBacKuP; true
+            ls /tmp/alt2/WAVEBacKuP > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'WAVEBacKuP'
+  PROD_BUILD_5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/WAVEBacKuP 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  W_TAU:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Patch The Achievements For Level 8
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; ls -v --inode /var/log | sort -R | head -3; true ; } > /tmp/alt2/lazy_bond_fermion_bog
+            ls /tmp/alt2/lazy_bond_fermion_bog > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'lazy_bond_fermion_bog'
+  shippit:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/lazy_bond_fermion_bog 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  main_loop:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Deferred revenue is empty
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; function fn { local n=$1; echo $((n * n)); }; fn 23; true ; } > /tmp/alt2/deltabog
+            ls /tmp/alt2/deltabog > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'deltabog'
+  deploy:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/deltabog 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  postFilter:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Up next screenshot the map view
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; if test -b /dev/null ; then echo "good"; else echo "bad"; fi; true ; } > /tmp/alt2/s1ic3-g01den-b34m-clu573r
+            ls /tmp/alt2/s1ic3-g01den-b34m-clu573r > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 's1ic3-g01den-b34m-clu573r'
+  jan8-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/s1ic3-g01den-b34m-clu573r 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  l1075z:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Perform analysis of the cold storage tier
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; find ~ -maxdepth 1 | head -15 | sed 's|.*/||'; true ; } > /tmp/alt2/IMG_86721
+            ls /tmp/alt2/IMG_86721 > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'IMG_86721'
+  wip-metrics:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/IMG_86721 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  initWithBlock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Refund Year End Pack TOOLS 9040
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; find /var/tmp -maxdepth 3 -type f -exec md5sum {} + 2>/dev/null | sort | head -8; true ; } > /tmp/alt2/sha_ac2f7b9c9ef
+            ls /tmp/alt2/sha_ac2f7b9c9ef > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'sha_ac2f7b9c9ef'
+  cf-alt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/sha_ac2f7b9c9ef 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  team-papa:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: SRCH 3487 product tour retirement
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; for w in {0..10}; do sleep 0.1; echo "$w"; done | sort; true ; } > /tmp/alt2/m017en_4dmin_ra5ter
+            ls /tmp/alt2/m017en_4dmin_ra5ter > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'm017en_4dmin_ra5ter'
+  wen-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/m017en_4dmin_ra5ter 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  r47io:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Pick The Conveyor Zone 7
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; fold -w 20 /etc/hosts | head -n1; true ; } > /tmp/alt2/render71
+            ls /tmp/alt2/render71 > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'render71'
+  green-light:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/render71 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  l-dialog:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Archive the probation reviews with care
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; echo -n "what's next?" && echo; true ; } > /tmp/alt2/1W
+            ls /tmp/alt2/1W > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - '1W'
+  DEV_DEPLOY_3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/1W 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  tabs--sm:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Throttle so nothing is lost
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; sed 's/[[:blank:]]*$//' /etc/skel/.profile | head -4; true ; } > /tmp/alt2/cr1m50n.surge.flux.p4rs3r.thre4d
+            ls /tmp/alt2/cr1m50n.surge.flux.p4rs3r.thre4d > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'cr1m50n.surge.flux.p4rs3r.thre4d'
+  fix-404:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/cr1m50n.surge.flux.p4rs3r.thre4d 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  dwFlagsChunkExport:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Loot the parking passes
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; /bin/ls --si /dev/*random| tail -n 3; true ; } > /tmp/alt2/img_bkp_img
+            ls /tmp/alt2/img_bkp_img > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'img_bkp_img'
+  greg-run:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/img_bkp_img 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  tryPush:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Poll Scheduler
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; find /var/tmp -maxdepth 2 -printf "%TF %TH:%TM %f\n" 2>/dev/null | cat -n; true ; } > /tmp/alt2/server-sprite
+            ls /tmp/alt2/server-sprite > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'server-sprite'
+  LAB_RUN_5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/server-sprite 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  disableLable:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: 65 stain the samples
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; ls -FG --full-time /etc/*release*|shuf -n 2; true ; } > /tmp/alt2/patch-8080
+            ls /tmp/alt2/patch-8080 > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'patch-8080'
+  gating:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/patch-8080 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  no_idx:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: UX 833 Shelve Express Lane
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; grep --ignore-case --only-matching -h alias ~/.bashrc | head -n 2; true ; } > /tmp/alt2/MATRIX_WEST_USER
+            ls /tmp/alt2/MATRIX_WEST_USER > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'MATRIX_WEST_USER'
+  add-edge-redirect:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/MATRIX_WEST_USER 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  rd_nd:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Now we block the DNS records
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; find /opt -type l -size 0 -exec basename {} \; 2> /dev/null | wc -l; true ; } > /tmp/alt2/LAYER_BISON
+            ls /tmp/alt2/LAYER_BISON > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'LAYER_BISON'
+  PackageRelease:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/LAYER_BISON 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  IdArchiveRateVersion:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Train for 20 epochs
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; getent passwd | head -n 6; true ; } > /tmp/alt2/05.07.2019
+            ls /tmp/alt2/05.07.2019 > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - '05.07.2019'
+  bun-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/05.07.2019 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  New-Warning-Tiny:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Go issue the probation reviews
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; find /run -maxdepth 2 -size +100k -newermt 2020-01-01 -printf '%M %p\n' 2>/dev/null | nl; true ; } > /tmp/alt2/atoll.canvas
+            ls /tmp/alt2/atoll.canvas > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'atoll.canvas'
+  v7-preview4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/atoll.canvas 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  notifyMotor:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: approval DO IT
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; comm -12 <(cut -d: -f1 /etc/passwd | sort) <(cut -d: -f1 /etc/group | sort) | head -n1; true ; } > /tmp/alt2/usr-usr-dat
+            ls /tmp/alt2/usr-usr-dat > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'usr-usr-dat'
+  API-83:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/usr-usr-dat 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  ReactiveBoundedBundleOptions:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Manifest file extraction for round two
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; if [ ! -x /bin/sh ] ; then echo Y; elif [ -e /tmp ] ; then echo maybe; else echo "N"; fi; true ; } > /tmp/alt2/BRAMBLE_MEMO
+            ls /tmp/alt2/BRAMBLE_MEMO > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'BRAMBLE_MEMO'
+  feat-3284:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/BRAMBLE_MEMO 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  pickActive:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Cover art is go
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; ls -d -1 -F /usr/sbin | pr -3 -t; true ; } > /tmp/alt2/shard
+            ls /tmp/alt2/shard > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'shard'
+  ensure-end-to-end-test-matrix:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/shard 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  Gamma_n1:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Versioning With Design Team
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; cut -d: -f6 /etc/passwd | sort -r | xargs -n1 basename | awk '{print length, $0}'; true ; } > /tmp/alt2/SCARLET_GARDEN
+            ls /tmp/alt2/SCARLET_GARDEN > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'SCARLET_GARDEN'
+  ship-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/SCARLET_GARDEN 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  sidebar251rad:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: render HELP
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'feed the cat' | cut -d' ' -f1; true ; } > /tmp/alt2/vaultFilterQuickLoader
+            ls /tmp/alt2/vaultFilterQuickLoader > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'vaultFilterQuickLoader'
+  WEB-488:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/vaultFilterQuickLoader 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  Ertyui:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Restock The Courier Pickup On Dock B
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; printenv | head -2 | grep -i lang | cut -d= -f1; true ; } > /tmp/alt2/ae2f5379db5
+            ls /tmp/alt2/ae2f5379db5 > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'ae2f5379db5'
+  feat-6091:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/ae2f5379db5 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  uat-dev-63:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Project Summit
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; find /run \( -name "user" -o -name "*.sock" \) -ctime -7 -exec ls -1d {} + 2>/dev/null | nl; true ; } > /tmp/alt2/quickquickatollreport
+            ls /tmp/alt2/quickquickatollreport > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'quickquickatollreport'
+  verify-partial-test-matrix:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/quickquickatollreport 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  hanasensor:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Reset
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; upper(){ echo "$#"; }; upper cat dog lion eagle; true ; } > /tmp/alt2/adminglyphchromevault
+            ls /tmp/alt2/adminglyphchromevault > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'adminglyphchromevault'
+  smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/adminglyphchromevault 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  wParamFailedPair:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: I like to inspect the test matrix early
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; echo 'a-b-c' | wc -w; true ; } > /tmp/alt2/omega39
+            ls /tmp/alt2/omega39 > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'omega39'
+  CORE-521:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/omega39 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  locale_ga_BR:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Try seeding the boss arena
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; grep -ri --include='*.conf' if /etc 2>/dev/null | cut -d: -f1 | sort -u; true ; } > /tmp/alt2/20170428_190110
+            ls /tmp/alt2/20170428_190110 > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - '20170428_190110'
+  spin-up:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/20170428_190110 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  hDCNodeSimple:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Centring of the user avatars
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; tail -n 20 /etc/passwd | sed 's/:.*//' | head -n10; true ; } > /tmp/alt2/fnv_eb38ef493f0b3d
+            ls /tmp/alt2/fnv_eb38ef493f0b3d > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'fnv_eb38ef493f0b3d'
+  build-staging-artifact-bundle:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/fnv_eb38ef493f0b3d 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  xverax:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Did the parcels get scanned
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; grep 'sh$' /etc/passwd | sort | cut -d ":" -f 1,7; true ; } > /tmp/alt2/5297.830_io
+            ls /tmp/alt2/5297.830_io > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - '5297.830_io'
+  validte:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/5297.830_io 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+  Option-Phone-Input:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Blank dilution for the new team
+          command: |
+            mkdir -p /tmp/alt2
+            { set +o pipefail 2>/dev/null; sdiff -w 43 <(seq 4) <(seq 2 5) | head -n4; true ; } > /tmp/alt2/azure-obj
+            ls /tmp/alt2/azure-obj > /dev/null && echo "ls verified"
+      - persist_to_workspace:
+          root: /tmp/alt2
+          paths:
+            - 'azure-obj'
+  feat-7181:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/alt2
+      - run:
+          name: Check stage 1
+          command: |
+            grep -cE '[[:space:]]' /tmp/alt2/azure-obj 2>/dev/null || true
+      - run:
+          name: Retrieve codebase
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Seed workspace
+          command: tar -xJ -f build-files-final.tar.xz
+      - run:
+          name: Hash artifacts
+          command: df -h
+      - run:
+          command: g++ --version
+      - run:
+          command: exec ./commit-kernel
+
+workflows:
+  default:
+    jobs:
+      - l-dialog
+      - DEV_DEPLOY_3:
+          requires:
+            - l-dialog
+      - team-papa:
+          requires:
+            - l-dialog
+      - wen-test:
+          requires:
+            - team-papa
+      - disableLable:
+          requires:
+            - team-papa
+      - gating:
+          requires:
+            - disableLable
+      - New-Warning-Tiny:
+          requires:
+            - disableLable
+      - v7-preview4:
+          requires:
+            - New-Warning-Tiny
+      - notifyMotor:
+          requires:
+            - New-Warning-Tiny
+      - API-83:
+          requires:
+            - notifyMotor
+      - locale_ga_BR:
+          requires:
+            - notifyMotor
+      - spin-up:
+          requires:
+            - locale_ga_BR
+      - Ertyui:
+          requires:
+            - locale_ga_BR
+      - feat-6091:
+          requires:
+            - Ertyui
+      - initWithBlock:
+          requires:
+            - Ertyui
+      - cf-alt:
+          requires:
+            - initWithBlock
+      - Option-Phone-Input:
+          requires:
+            - initWithBlock
+      - feat-7181:
+          requires:
+            - Option-Phone-Input
+      - xverax:
+          requires:
+            - Option-Phone-Input
+      - validte:
+          requires:
+            - xverax
+      - l1075z:
+          requires:
+            - xverax
+      - wip-metrics:
+          requires:
+            - l1075z
+      - uat-dev-63:
+          requires:
+            - l1075z
+      - verify-partial-test-matrix:
+          requires:
+            - uat-dev-63
+      - ReactiveBoundedBundleOptions:
+          requires:
+            - uat-dev-63
+      - feat-3284:
+          requires:
+            - ReactiveBoundedBundleOptions
+      - postFilter:
+          requires:
+            - ReactiveBoundedBundleOptions
+      - jan8-ship:
+          requires:
+            - postFilter
+      - pickActive:
+          requires:
+            - postFilter
+      - ensure-end-to-end-test-matrix:
+          requires:
+            - pickActive
+      - r47io:
+          requires:
+            - pickActive
+      - green-light:
+          requires:
+            - r47io
+      - main_loop:
+          requires:
+            - r47io
+      - deploy:
+          requires:
+            - main_loop
+      - hanasensor:
+          requires:
+            - main_loop
+      - smoke:
+          requires:
+            - hanasensor
+      - W_TAU:
+          requires:
+            - hanasensor
+      - shippit:
+          requires:
+            - W_TAU
+      - addr_prod:
+          requires:
+            - W_TAU
+      - PROD_BUILD_5:
+          requires:
+            - addr_prod
+      - IdArchiveRateVersion:
+          requires:
+            - addr_prod
+      - bun-release:
+          requires:
+            - IdArchiveRateVersion
+      - hDCNodeSimple:
+          requires:
+            - IdArchiveRateVersion
+      - build-staging-artifact-bundle:
+          requires:
+            - hDCNodeSimple
+      - dwFlagsChunkExport:
+          requires:
+            - hDCNodeSimple
+      - greg-run:
+          requires:
+            - dwFlagsChunkExport
+      - Gamma_n1
+      - ship-it:
+          requires:
+            - Gamma_n1
+      - tryPush:
+          requires:
+            - Gamma_n1
+      - LAB_RUN_5:
+          requires:
+            - tryPush
+      - no_idx:
+          requires:
+            - tryPush
+      - add-edge-redirect:
+          requires:
+            - no_idx
+      - tabs--sm:
+          requires:
+            - no_idx
+      - fix-404:
+          requires:
+            - tabs--sm
+      - sidebar251rad:
+          requires:
+            - tabs--sm
+      - WEB-488:
+          requires:
+            - sidebar251rad
+      - wParamFailedPair:
+          requires:
+            - sidebar251rad
+      - CORE-521:
+          requires:
+            - wParamFailedPair
+      - rd_nd:
+          requires:
+            - wParamFailedPair
+      - PackageRelease:
+          requires:
+            - rd_nd
